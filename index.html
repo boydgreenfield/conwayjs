@@ -72,32 +72,31 @@ reloader4 = d3.select("#reloader4");
 
 reloader1
   .on('click', function() {
-      element = d3.select(this);
-      href = element.attr('href');
-      window.location = href;
+      hash = jQuery(location).attr('hash');
+      data = readCustomPickle(hash, data);
+      loadData();
   });
 
 reloader2
   .on('click', function() {
-      element = d3.select(this);
-      href = element.attr('href');
-      window.location = href;
+      hash = jQuery(location).attr('hash');
+      data = readCustomPickle(hash, data);
+      loadData();
 });
 
 reloader3
   .on('click', function() {
-      element = d3.select(this);
-      href = element.attr('href');
-      window.location = href;
+      hash = jQuery(location).attr('hash');
+      data = readCustomPickle(hash, data);
+      loadData();
 });
 
 reloader4
   .on('click', function() {
-      element = d3.select(this);
-      href = element.attr('href');
-      window.location = href;
+      hash = jQuery(location).attr('hash');
+      data = readCustomPickle(hash, data);
+      loadData();
 });
-
 
 </script>
 
