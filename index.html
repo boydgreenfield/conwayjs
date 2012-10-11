@@ -35,7 +35,7 @@
         </div>
     </div>
     <div id="about">
-        <p>A <a href="http://d3js.org/">D3.js</a> implementation of <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game of Life</a>. Click cells on the board to toggle them and between "alive" and "dead", and then hit Start to run the game. Alternatively, hit Random to pre-populate the board. Stop pauses the game, while Reset empties the board. Share or save the current board using the Generate URL or Share buttons. Or, start with any of these: <a id="reloader1" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-31-pa8-0-r-izk-0-0-k-0-0-5-0-0-o-rnl-0-9-w0-vls-1-r0g-740-0-zk-16o-0-8w-4qo-0-w-1s0-0-0-8w-0-0-w-0-0-0-0-0-0-0-0-0-0-0-0-1c-pa8-0-a-fsw-0-1-2dc-0-0-0-0-0-0">Still Lives</a>, <a id="reloader2" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-pbk-9hg-s-6x4-tt-2rk-1q8-e8c-cn4-c-a30-0-3-3-0-w-0-74-1e0-16p-pc3-paa-74-6c0-0-8-cn4-0-6-4qo-0-1kw-0-cn5-12bk-0-3c0-3k-0-sg-0-12k0-11xc-0-9n0-9hc-2-9mo-12j4-34-row-9ms-b28-6bk-1-0-0-0-0-0-0-0-0-0-0">Blinkers and Beacons</a>, <a id="reloader3" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-1-pvk-0-0-9s0-0-0-eqs-0-0-5vb-0-0-iy-pa8-0-35-11xc-0-0-0-0-7-5j4-0-2-xog-0-1-17cg-0-0-eqs-0-0-m0-0-0-ar-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0">Pulsars</a>, <a id="reloader4" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-1r-182k-35b-pa8-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0">Guns</a>.</p>
+        <p>A <a href="http://d3js.org/">D3.js</a> implementation of <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game of Life</a>. Click cells on the board to toggle them and between "alive" and "dead", and then hit Start to run the game. Alternatively, hit Random to pre-populate the board. Stop pauses the game, while Reset empties the board. Share or save the current board using the Generate URL or Share buttons. Or, start with any of these: <a class="reloader" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-31-pa8-0-r-izk-0-0-k-0-0-5-0-0-o-rnl-0-9-w0-vls-1-r0g-740-0-zk-16o-0-8w-4qo-0-w-1s0-0-0-8w-0-0-w-0-0-0-0-0-0-0-0-0-0-0-0-1c-pa8-0-a-fsw-0-1-2dc-0-0-0-0-0-0">Still Lives</a>, <a class="reloader" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-pbk-9hg-s-6x4-tt-2rk-1q8-e8c-cn4-c-a30-0-3-3-0-w-0-74-1e0-16p-pc3-paa-74-6c0-0-8-cn4-0-6-4qo-0-1kw-0-cn5-12bk-0-3c0-3k-0-sg-0-12k0-11xc-0-9n0-9hc-2-9mo-12j4-34-row-9ms-b28-6bk-1-0-0-0-0-0-0-0-0-0-0">Blinkers and Beacons</a>, <a class="reloader" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-1-pvk-0-0-9s0-0-0-eqs-0-0-5vb-0-0-iy-pa8-0-35-11xc-0-0-0-0-7-5j4-0-2-xog-0-1-17cg-0-0-eqs-0-0-m0-0-0-ar-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0">Pulsars</a>, <a class="reloader" href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-1r-182k-35b-pa8-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0">Guns</a>.</p>
     </div>
 </div>
 
@@ -61,11 +61,9 @@ var yWin = (yCells) * (ycellWidth);
 var transTime = 1000;
 
 
-reloaders = ["#reloader1", "reloader2", "reloader3", "reloader4"];
-
 var hash = jQuery(location).attr('hash');
 data = initData(xCells, yCells, (xcellWidth), (ycellWidth), hash);
-drawGrid("#grid", data, xWin, yWin, xcellWidth, ycellWidth, transTime, "#start", "#stop", "#reset", "#random", "#counter", "#save", "#load", "#tweet", reloaders);
+drawGrid("#grid", data, xWin, yWin, xcellWidth, ycellWidth, transTime, "#start", "#stop", "#reset", "#random", "#counter", "#save", "#load", "#tweet", ".reloader");
 
 
 
