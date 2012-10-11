@@ -60,43 +60,14 @@ var xWin = (xCells) * (xcellWidth);
 var yWin = (yCells) * (ycellWidth);
 var transTime = 1000;
 
+
+reloaders = ["#reloader1", "reloader2", "reloader3", "reloader4"];
+
 var hash = jQuery(location).attr('hash');
 data = initData(xCells, yCells, (xcellWidth), (ycellWidth), hash);
-drawGrid("#grid", data, xWin, yWin, xcellWidth, ycellWidth, transTime, "#start", "#stop", "#reset", "#random", "#counter", "#save", "#load", "#tweet");
+drawGrid("#grid", data, xWin, yWin, xcellWidth, ycellWidth, transTime, "#start", "#stop", "#reset", "#random", "#counter", "#save", "#load", "#tweet", reloaders);
 
-// Now set up the reloads
-reloader1 = d3.select("#reloader1");
-reloader2 = d3.select("#reloader2");
-reloader3 = d3.select("#reloader3");
-reloader4 = d3.select("#reloader4");
 
-reloader1
-  .on('click', function() {
-      hash = jQuery(location).attr('hash');
-      data = readCustomPickle(hash, data);
-      loadData();
-  });
-
-reloader2
-  .on('click', function() {
-      hash = jQuery(location).attr('hash');
-      data = readCustomPickle(hash, data);
-      loadData();
-});
-
-reloader3
-  .on('click', function() {
-      hash = jQuery(location).attr('hash');
-      data = readCustomPickle(hash, data);
-      loadData();
-});
-
-reloader4
-  .on('click', function() {
-      hash = jQuery(location).attr('hash');
-      data = readCustomPickle(hash, data);
-      loadData();
-});
 
 </script>
 
