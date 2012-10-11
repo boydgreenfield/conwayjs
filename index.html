@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css" />
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.v2.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/mini_twitter_intents-ck.js"></script>
+</head>
+<body>
+
+<div id="titling">
+    <h1>Conway's Game of Life</h1>
+</div>
+
+<p id="counter">0</p>
+<div id="main-window">
+    <div id="grid"></div>
+</div>
+
+
+<div id="bottom-panel">
+    <div id="controls">
+        <div id="controling">
+            <p id="start"><i class="icon-play"></i> Start</p>
+            <p id="stop"><i class="icon-pause"></i> Pause</p>
+            <p id="random"><i class="icon-random"></i> Random</p>
+            <p id="reset"><i class="icon-refresh"></i> Reset</p>
+        </div>
+        <div id="sharing">
+            <!-- <p>To share, generate a unique link and copy-paste from the URL field or use one of the social options below.</p> -->
+            <p id="save"><i class="icon-link"></i> Generate URL</p>
+            <a href="https://twitter.com/intent/tweet?url=http://www.google.com/" id="tweet"><i class="icon-twitter"></i> Share</a>
+        </div>
+    </div>
+    <div id="about">
+        <p>A <a href="http://d3js.org/">D3.js</a> implementation of <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Conway's Game of Life</a>. Click cells on the board to toggle them and between "alive" and "dead", and then hit Start to run the game. Alternatively, hit Random to pre-populate the board. Stop pauses the game, while Reset empties the board. Share or save the current board using the Generate URL or Share buttons. Or, start with any of these: <a href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-31-pa8-0-r-izk-0-0-k-0-0-5-0-0-o-rnl-0-9-w0-vls-1-r0g-740-0-zk-16o-0-8w-4qo-0-w-1s0-0-0-8w-0-0-w-0-0-0-0-0-0-0-0-0-0-0-0-1c-pa8-0-a-fsw-0-1-2dc-0-0-0-0-0-0">Still Lives</a>, <a href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-pbk-9hg-s-6x4-tt-2rk-1q8-e8c-cn4-c-a30-0-3-3-0-w-0-74-1e0-16p-pc3-paa-74-6c0-0-8-cn4-0-6-4qo-0-1kw-0-cn5-12bk-0-3c0-3k-0-sg-0-12k0-11xc-0-9n0-9hc-2-9mo-12j4-34-row-9ms-b28-6bk-1-0-0-0-0-0-0-0-0-0-0">Blinkers and Beacons</a>, <a href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-1-pvk-0-0-9s0-0-0-eqs-0-0-5vb-0-0-iy-pa8-0-35-11xc-0-0-0-0-7-5j4-0-2-xog-0-1-17cg-0-0-eqs-0-0-m0-0-0-ar-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0">Pulsars</a>, <a href="http://boydgreenfield.com/conwayjs/index.html#0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-1r-182k-35b-pa8-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0">Guns</a>.</p>
+    </div>
+</div>
+
+<script type="text/javascript" src="scripts/conway-ck.js"></script>
+<script type="text/javascript">
+
+// First get the window height and width
+var winHeight = jQuery(window).height();
+var winWidth = jQuery(window).width();
+var windowHash = jQuery(location).attr('hash');
+
+var xGridWidth = (0.75 * winWidth); // Get 80% dimension
+var yGridWidth = (0.70 * winHeight); // Get 70% dimension
+
+var xCells = 50;
+var yCells = 24;
+
+var xcellWidth = d3.round(xGridWidth / xCells);
+var ycellWidth = d3.round(yGridWidth / yCells);
+
+var xWin = (xCells) * (xcellWidth);
+var yWin = (yCells) * (ycellWidth);
+var transTime = 1000;
+
+var hash = jQuery(location).attr('hash');
+data = initData(xCells, yCells, (xcellWidth), (ycellWidth), hash);
+drawGrid("#grid", data, xWin, yWin, xcellWidth, ycellWidth, transTime, "#start", "#stop", "#reset", "#random", "#counter", "#save", "#load", "#tweet");
+
+</script>
+
+
+</body>
+</html>
+
+<!--
+    Uses Font Awesome. Thanks for the great library!
+-->

@@ -1,0 +1,189 @@
+// Specify project colors
+$black: #000000;
+$white: #ffffff;
+$light-gray: #E0E0E0;
+$medium-gray: #C9C9C9;
+$darker-gray: #A0A0A0;
+$color1: #0F002E;
+$link-color: #2629A8;
+$background: #f7f5f0;
+
+// Specify size of projects box
+$title-height: 80px;
+$projs-width: 100%;
+
+// Other project parameters
+$small-margin: 10px;
+
+// Specify some default styles for mixins
+@mixin center($width, $height-pct, $max-height) {
+    @include center-h($width);
+    @include center-v($height-pct, $max-height);
+}
+
+@mixin center-h($width) {
+    margin-left: auto;
+    margin-right: auto;
+    width: $width;
+}
+
+@mixin center-v($height-pct, $max-height) {
+    $center-height: $height-pct * $max-height;
+    margin-top: ($max-height - $center-height) / 2;
+    margin-bottom: ($max-height - $center-height) / 2;
+    height: ($height-pct * $max-height);
+}
+
+@mixin no-margins {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+@mixin small-margins {
+    margin-left: $small-margin;
+    margin-right: $small-margin;
+    margin-top: $small-margin;
+    margin-bottom: $small-margin;
+}
+
+@mixin rounded-corners($radius) {
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin controls {
+    align: right;
+}
+
+
+// Override annoying webkit behavior
+// Specify distinct page areas -- note this is mostly positionin
+body {
+    background-color: $background;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
+
+p {
+    @include no-margins;
+}
+
+body {
+    @include no-margins;
+}
+
+h1 {
+    @include no-margins;
+}
+
+h2 {
+    @include no-margins;
+}
+
+#titling {
+    @include center-h(75%);
+    font-family: 'OpenSans';
+    height: 12%;
+    position: relative;
+}
+
+#titling h1 {
+    position: absolute;
+    bottom: 10px;
+}
+
+#main-window {
+    @include center-h(75%);
+    height: 70%;
+    padding-bottom: 25px;
+}
+
+#grid {
+    height: 70%;
+}
+
+#counter {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    text-align: right;
+    right: 5px;
+    top: 4px;
+    z-index: 2;
+    display: block;
+    font: normal 8px monospace;
+    color: $medium-gray;
+}
+
+#bottom-panel {
+    height: 18%;
+    @include center-h(75%);
+    overflow-y: hidden;
+    z-index: 2;
+    font-family: 'OpenSans';
+}
+
+#about {
+    margin-left: 0%;
+    font-size: 11px;
+//    margin-top: 0.6%;
+//    padding-top: 0.3%;
+//    display: inline;
+}
+
+#about a {
+    color: $link-color;
+}
+
+#controls {
+//    margin-top: 0.6%;
+//    padding-top: 0.3%;
+//    width: 35%;
+    margin-left: 2%;
+    margin-right: 1%;
+    float: right;
+    padding-right: 1%;
+    padding-bottom: 0.3%;
+    padding-left: 0.3%;
+    border-left: 1px solid $medium-gray;
+}
+
+#controling {
+    font-size: 14px;
+}
+
+#controls p {
+    display: inline;
+    padding-left: 10px;
+}
+
+#sharing {
+    font-size: 14px;
+    padding-top: 5%;
+    text-align: right;
+}
+
+#sharing p {
+    padding-right: 9px;
+}
+
+#sharing a:link {
+    color: none;
+}
+
+#sharing a:visited {
+    color: none;
+}
+
+#sharing a:active {
+    color: none;
+}
