@@ -1,5 +1,5 @@
 var hashLength = 16;
-var debug = true;
+var debug = false;
 
 function writeCustomPickle(data) {
     var tempString = "";
