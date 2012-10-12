@@ -443,12 +443,15 @@ function drawGrid(id, data, xWin, yWin, xCellW, yCellW, transTime, idStart, idSt
           }
       });
 
+
     reloaders = d3.selectAll(idReloads);
     reloaders
       .on('click', function() {
-          hash = jQuery(location).attr('hash');
-          data = readCustomPickle(hash, data);
-          loadData();
+          jQuery.doTimeout(1000, function() {
+              hash = jQuery(location).attr('hash');
+              data = readCustomPickle(hash, data);
+              loadData();
+          });
       });
 
 
