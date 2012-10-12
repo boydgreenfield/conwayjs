@@ -61,10 +61,18 @@ function readCustomPickle(string, data) {
 }
 
 
-function initData(xDim, yDim, xSize, ySize, hash) {
+function initData(xDim, yDim, xSize, ySize, hash, xpos, ypos) {
     var data = [];
-    var xpos = 0;
-    var ypos = 0;
+    var xposInit = 0;
+    var yposInit = 0;
+    if (xpos !== null) {
+        xposInit = xpos;
+    }
+    if (ypos !== null) {
+        yposInit = ypos;
+    }
+    // console.log("Xpos is");
+    // console.log(xpos);
     var x_inc = 0;
     var y_inc = 0;
     var newValue = 0;
@@ -131,8 +139,8 @@ function initData(xDim, yDim, xSize, ySize, hash) {
         neighbors = [tl, tt, tr, ll, rr, bl, bb, br];
 
         // Now calculate the positions
-        xpos = x_inc * xStep;
-        ypos = y_inc * yStep;
+        xpos = x_inc * xStep + xposInit;
+        ypos = y_inc * yStep + yposInit;
 
         // Get all the neighbors
         dataItem = {
