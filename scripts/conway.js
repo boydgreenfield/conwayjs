@@ -251,7 +251,7 @@ var color2 = "#262958";
 // var color1 = "#A984B3";
 // var color2 = "#5F3E68";
 
-function drawGrid(id, data, xWin, yWin, xCellW, yCellW, transTime, idStart, idStop, idReset, idRandom, idCounter, idSave, idLoad, idTweet, idReloads) {
+function drawGrid(id, data, xWin, yWin, xCellW, yCellW, transTime, idStart, idStop, idReset, idRandom, idCounter, idSave, idLoad, idTweet) {
     var svg = d3.select(id).append("svg")
         .attr("width", xWin)
         .attr("height", yWin)
@@ -441,17 +441,6 @@ function drawGrid(id, data, xWin, yWin, xCellW, yCellW, transTime, idStart, idSt
               if (debug) {console.log(href);}
               if (debug) {console.log("Stopped and tweeted");}
           }
-      });
-
-
-    reloaders = d3.selectAll(idReloads);
-    reloaders
-      .on('click', function() {
-          jQuery.doTimeout(1000, function() {
-              hash = jQuery(location).attr('hash');
-              data = readCustomPickle(hash, data);
-              loadData();
-          });
       });
 
 
