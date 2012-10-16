@@ -299,6 +299,18 @@ function drawGrid(id, data, xWin, yWin, xCellW, yCellW, transTime, idStart, idSt
           }
           if (debug) {console.log("Value is:");}
           if (debug) {console.log(val);}
+      })
+      .on('mouseout', function() {
+          element = d3.select(this);
+          element
+            .attr('fill', function(d,i) {
+                return colorScale(d.value);
+            });
+      })
+      .on('mouseover', function() {
+          element = d3.select(this);
+          element
+             .attr('fill', color2);
       });
 
 
