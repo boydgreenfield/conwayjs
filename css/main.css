@@ -127,3 +127,13 @@ h2 {
 
 #sharing a:active {
   color: none; }
+
+footer {
+  color: #e0e0e0;
+  font-family: 'OpenSans';
+  font-size: 0.6em;
+  position: fixed;
+  bottom: 10px;
+  display: block;
+  text-align: center;
+  width: 100%; }
